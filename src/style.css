@@ -174,10 +174,6 @@ input:checked ~ .bubble::after {
   opacity: 0.75;
 }
 
-.todo-list .list {
-  margin: 1rem 0;
-}
-
 .todo-list .todo-item {
   display: flex;
   align-items: center;
@@ -214,18 +210,13 @@ input:checked ~ .bubble::after {
 }
 
 .todo-item label {
-  display: block;
-  margin-right: 1rem;
   cursor: pointer;
 }
 
-.todo-item .todo-content {
-  flex: 1 1 0%;
-}
-
-.todo-item .todo-content input {
+.todo-item input {
   color: var(--dark);
   font-size: 1.125rem;
+  background-color: #313154;
 }
 
 .todo-item .actions {
@@ -234,7 +225,6 @@ input:checked ~ .bubble::after {
 }
 
 .todo-item .actions button {
-  display: block;
   padding: 0.5rem;
   border-radius: 0.25rem;
   color: #fff;
@@ -246,16 +236,6 @@ input:checked ~ .bubble::after {
   opacity: 0.75;
 }
 
-.todo-item .actions .edit {
-  margin-right: 0.5rem;
-  background-color: var(--primary);
-}
-
 .todo-item .actions .delete {
   background-color: var(--danger);
-}
-
-.todo-item.done .todo-content input {
-  text-decoration: line-through;
-  color: var(--grey);
 }

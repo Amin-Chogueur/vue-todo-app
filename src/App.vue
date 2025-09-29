@@ -108,7 +108,7 @@ console.log(filtredTodos);
       </section>
 
       <section class="todo-list">
-        <h3>TODO LIST {{ filter }}</h3>
+        <h3>TODO LIST</h3>
         <div class="flex items-center gap-2">
           <button
             @click="
@@ -134,18 +134,22 @@ console.log(filtredTodos);
           </button>
         </div>
         <div class="list" id="todo-list">
-          <div v-for="todo in filtredTodos" :key="todo.id" class="todo-item">
-            <label>
-              <input type="checkbox" v-model="todo.completed" />
-              <span :class="`bubble ${todo.category}`"></span>
-            </label>
+          <div
+            v-for="todo in filtredTodos"
+            :key="todo.id"
+            class="todo-item flex justify-between items-center"
+          >
+            <div class="flex items-center gap-2">
+              <label>
+                <input type="checkbox" v-model="todo.completed" />
+                <span :class="`bubble ${todo.category}`"></span>
+              </label>
 
-            <div class="todo-content">
-              <input type="text" v-model="todo.title" />
+              <input type="text" v-model="todo.title" class="bg-green-500" />
             </div>
 
-            <div class="actions" @click="deleteTodo(todo.id)">
-              <button class="delete">Delete</button>
+            <div @click="deleteTodo(todo.id)">
+              <button class="delete">❌</button>
             </div>
           </div>
         </div>
